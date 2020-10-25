@@ -30,14 +30,23 @@ weatherForm.addEventListener('submit', (event) => {
                 tempElement.textContent = "";
                 weatherCondition.textContent = "";
             } else {
-                console.log()
-                if(data.description === "rain" || data.description === "fog") {
-                    weatherIcon.className = "wi wi-day-" + data.description
-                } else {
+                if(data.description === "moderate rain"){
+                    weatherIcon.className = "wi wi-day-rain"
+                }else if(data.description === "haze"){
+                    weatherIcon.className = "wi wi-day-fog"
+                }else if(data.description === "clear sky"){
+                    weatherIcon.className = "wi wi-day-sunny"
+                }else if(data.description === "smoke"){
+                    weatherIcon.className = "wi wi-day-cloudy-gusts"
+                }else if(data.description === "snow"){
+                    weatherIcon.className = "wi wi-day-snow"
+                }else if(data.description === "scattered clouds"){
+                    weatherIcon.className = "wi wi-cloudy"
+                }else {
                     weatherIcon.className = "wi wi-day-cloudy"
                 }
                 locationElement.textContent = data.cityName;
-                tempElement.textContent = (data.temperature - 273.5).toFixed(2) + String.fromCharCode(176);
+                tempElement.textContent = (data.temperature - 273.5).toFixed(2) +' ' + String.fromCharCode(176) +'C';
                 weatherCondition.textContent = data.description.toUpperCase();
             }
         }) 

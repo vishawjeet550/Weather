@@ -4,12 +4,25 @@
 body {
   color: #333333;
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 650px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+img{
+  float: left;
+width: 100px;
+height: 100px;
+}
+
+#heading{
+  font-size: 50px;
+  position: relative;
+  top: 18px;
+  left: 10px;
 }
 
 .main-content {
@@ -51,7 +64,6 @@ h2 {
 }
 
 .weatherLocation button{
-  background: #080705;
   color:#fff;
   border: 1px solid transparent;
 }

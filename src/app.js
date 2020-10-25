@@ -20,7 +20,7 @@ app.use(express.static(publicStaticDirPath));
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather App'
+        title: 'Weather'
     })
 })
 
@@ -29,7 +29,7 @@ app.get('/weather', (req, res) => {
     const address = req.query.address
     if(!address) {
         return res.send({
-            error: "You must enter address in search text box"
+            error: "Invalid Location"
         })
     }
 
@@ -39,7 +39,6 @@ app.get('/weather', (req, res) => {
                 error
             })
         }
-        console.log(temperature, description, cityName);
         res.send({
             temperature,
             description,
@@ -55,6 +54,4 @@ app.get("*", (req, res) => {
 })
 
 
-app.listen(port, () => {
-    console.log("Server is up and running on port: ", port);
-})
+app.listen(port)
