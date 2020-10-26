@@ -14,7 +14,8 @@ body{
   width: 350px;
   height: 500px;
   background-color: white;
-  margin-left: auto;
+  padding: 0 auto;
+  margin-left: 0px;
   margin-right: auto;
   transition: 0.3s;
   margin-bottom: 30px;
