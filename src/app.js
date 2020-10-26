@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require("hbs");
 const path = require("path");
 const app = express();
-
+const newsData=require('../utils/newsData')
 const weatherData = require('../utils/weatherData');
 
 const port = process.env.PORT || 3000
@@ -23,8 +23,22 @@ app.get('', (req, res) => {
         title: 'Weather'
     })
 })
+// app.get('/news',(req,res)=>{
+//     res.render('news')
+// })
+app.get('/news',(req,res)=>{
+        newsData((error,data)=>{
+            if(error){
+                return res.send({
+                    error
+                })
+            }
+            res.render('news',{
+                article:data.articles
+            })
+        })
+})
 
-//localhost:3000/weather?address=lahore
 app.get('/weather', (req, res) => {
     const address = req.query.address
     if(!address) {

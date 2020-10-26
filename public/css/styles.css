@@ -1,28 +1,130 @@
+
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
-/* $border-radius: 20px; */
-body {
-  color: #333333;
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+
+body{
+  margin: 0px;
+  padding: 0px;
+  margin-right: 0px;
+  width: 100vw;
+  height: 100vw;
 }
 
-img{
+.cardcontainer {
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.3s;
+  margin-bottom: 30px;
+}
+
+.cardcontainer:hover {
+  box-shadow: 0 0 45px gray
+}
+
+.photo {
+  height: 300px;
+  width: 100%
+}
+
+.photo img {
+  height: 100%;
+  width: 100%
+}
+
+
+.content {
+  width: 80%;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -33px
+}
+
+.photos {
+  width: 90px;
+  height: 30px;
+  background-color: #E74C3C;
+  color: white;
+  position: relative;
+  top: -30px;
+  padding-left: 10px;
+  font-size: 20px
+}
+
+.txt4 {
+  font-size: 20px;
+  position: relative;
+  top: 33px
+}
+
+
+.txt2 {
+  margin-top: 20px;
+  position: relative;
+  top: 8px
+}
+
+.cardcontainer:hover>.photo {
+  height: 200px;
+  animation: move1 0.5s ease both
+}
+
+@keyframes move1 {
+  0% {
+      height: 300px
+  }
+
+  100% {
+      height: 200px
+  }
+}
+
+.cardcontainer:hover>.content {
+  height: 200px
+}
+
+.footer {
+  margin-top: 100px;
+  width: 350px;
+  height: 200px;
+  background-color: white;
+  position: relative;
+  top: -15px
+}
+
+.btn {
+  position: relative;
+  top: 15px
+}
+
+
+
+
+
+#weatherImage{
   float: left;
-width: 100px;
-height: 100px;
+ width: 80px;
+ height: 80px;
+}
+#newsImage{
+  float: left;
+width: 80px;
+height: 80px;
 }
 
 #heading{
-  font-size: 50px;
-  position: relative;
+  margin-top: 20px;
+  float: left;
   top: 18px;
+  display: inline;
   left: 10px;
+  color:grey;
+  text-decoration:none;
+  width: auto;
 }
 
 .main-content {
@@ -31,23 +133,21 @@ height: 100px;
 
 header {
   margin-top: 16px;
-  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-h2 {
-  font-size: 64px;
-  margin-bottom: 16px;
+#searchBar {
+  width: 150px;
 }
-
 
 .widget {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin-top:200px;
+  margin-right:  auto;
+  margin-left: auto;
   display: flex;
   height: 300px;
-  width: 600px;
-  transform: translate(-50%, -50%);
+  width: 65%;
   flex-wrap: wrap;
   cursor: pointer;
   border-radius: 20px;
@@ -65,15 +165,12 @@ h2 {
 
 .weatherLocation button{
   color:#fff;
-  border: 1px solid transparent;
-}
-.weatherLocation input:focus{
-  outline: 0 none;
+  margin-top: -30px;
 }
 
 .widget .weatherIcon {
-  flex: 1 100%;
-  height: 60%;
+  flex: 1 60%;
+  height: 45%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   background: #FAFAFA;
@@ -84,11 +181,11 @@ h2 {
   font-size: 100px;
 }
 .widget .weatherIcon i {
-  padding-top: 30px;
+  padding-top: 0px;
 }
 .widget .weatherInfo {
   flex: 0 0 70%;
-  height: 40%;
+  height: 100px;
   background: #080705;
   border-bottom-left-radius: 20px;
   display: flex;
@@ -98,7 +195,7 @@ h2 {
 .widget .weatherInfo .temperature {
   flex: 0 0 40%;
   width: 100%;
-  font-size: 35px;
+  font-size: 23px;
   display: flex;
   justify-content: space-around;
 }
@@ -120,7 +217,7 @@ h2 {
 }
 .widget .date {
   flex: 0 0 30%;
-  height: 40%;
+  height: 100px;
   background: rgb(68, 112, 207);
   border-bottom-right-radius: 20px;
   display: flex;

@@ -14,8 +14,7 @@ const dateElement = document.querySelector('.date');
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-dateElement.textContent = new Date().getDate() + ", " + monthNames[new Date().getMonth()].substring(0, 3);
-
+dateElement.textContent = new Date().getDate() + " " + monthNames[new Date().getMonth()].substring(0, 3);
 
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault();
